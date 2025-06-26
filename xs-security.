@@ -1,20 +1,21 @@
 
-{
-    "xsappname": "my-fiori-app",
-    "tenant-mode": "shared",
-    "scopes": [
         {
-            "name": "$XSAPPNAME.User",
-            "description": "User Scope"
-        }
-    ],
-    "role-templates": [
-        {
-            "name": "User",
-            "description": "User Role",
-            "scope-references": [
-                "$XSAPPNAME.User"
+            "xsappname": "my-cap-app",
+            "tenant-mode": "dedicated",
+            "scopes": [
+                {
+                    "name": "$XSAPPNAME.Viewer",
+                    "description": "Viewer Scope"
+                }
+            ],
+            "role-templates": [
+                {
+                    "name": "Viewer",
+                    "description": "Viewer Role",
+                    "scope-references": [
+                        "$XSAPPNAME.Viewer"
+                    ]
+                }
             ]
         }
-    ]
-}
+    
