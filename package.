@@ -1,0 +1,1 @@
+{"name": "chat-application","version": "1.0.0","description": "SAP CAP Chat Application","scripts": {"start": "cds run"},"dependencies": {"@sap/cds": "^5","@sap/xssec": "^3","@sap/xsenv": "^3"}}

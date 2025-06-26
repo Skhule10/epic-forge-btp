@@ -1,0 +1,18 @@
+{
+  "VCAP_SERVICES": {
+    "xsuaa": [
+      {
+        "name": "chat-xsuaa",
+        "label": "xsuaa",
+        "tags": ["xsuaa"],
+        "credentials": {
+          "xsappname": "chat-application",
+          "tenant-mode": "dedicated",
+          "clientid": "client-id-placeholder",
+          "clientsecret": "client-secret-placeholder",
+          "url": "https://authentication.example.com"
+        }
+      }
+    ]
+  }
+}
