@@ -9,7 +9,7 @@ def test_health_check():
     assert response.() == {"status": "healthy"}
 
 def test_start_sap_ai_core_job():
-    response = client.post("/sap-ai-core/start-job", ={"job_id": "12345"})
+    response = client.post("/sap-ai-core/start-job", params={"job_id": "12345"})
     assert response.status_code == 200
     assert response.() == {"status": "Job started", "job_id": "12345"}
 
@@ -19,11 +19,11 @@ def test_get_sap_ai_core_job_status():
     assert response.() == {"status": "Job completed", "job_id": "12345"}
 
 def test_stop_sap_ai_core_job():
-    response = client.post("/sap-ai-core/stop-job", ={"job_id": "12345"})
+    response = client.post("/sap-ai-core/stop-job", params={"job_id": "12345"})
     assert response.status_code == 200
     assert response.() == {"status": "Job stopped", "job_id": "12345"}
 
-def test_process_nlp_query():
-    response = client.post("/process-nlp-query", ={"text": "Hello, assistant!"})
+def test_simulate_nlp_processing():
+    response = client.post("/process-nlp-query", params={"nlp_query": "Test NLP"})
     assert response.status_code == 200
-    assert response.() == {"response": "Processed response for query: Hello, assistant!"}
+    assert response.() == {"status": "NLP query processed", "query": "Test NLP", "result": "Simulated result"}
