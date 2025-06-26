@@ -4,23 +4,35 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SAP Fiori Application</title>
+    <title>SAP Fiori Digital Assistant</title>
     <script id="sap-ui-bootstrap"
             src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
             data-sap-ui-theme="sap_belize"
-            data-sap-ui-libs="sap.m"
+            data-sap-ui-libs="sap.m, sap.f"
             data-sap-ui-compatVersion="edge"
             data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
             data-sap-ui-resourceroots='{"myApp": "./"}'>
     </script>
 </head>
 <body class="sapUiBody" id="content">
-    <ui5-shellbar primary-title="My Fiori App"></ui5-shellbar>
-    <ui5-button id="myButton" design="Emphasized" icon="add">Press Me</ui5-button>
+    <ui5-shellbar primary-title="Digital Assistant"
+                  secondary-title="SAP CAP Application"
+                  show-co-pilot>
+        <ui5-avatar icon="employee"></ui5-avatar>
+    </ui5-shellbar>
+    <div id="appContainer" style="padding: 10px;">
+        <ui5-card heading="Welcome to the Digital Assistant" status="Active">
+            <div style="padding: 10px;">
+                <ui5-input placeholder="Ask your assistant here..." id="queryInput"></ui5-input>
+                <ui5-button id="sendButton" design="Emphasized" icon="paper-plane">Send</ui5-button>
+            </div>
+        </ui5-card>
+    </div>
     <script>
         sap.ui.getCore().attachInit(function () {
-            document.getElementById("myButton").addEventListener("click", function() {
-                alert("Button Pressed!");
+            document.getElementById("sendButton").addEventListener("click", function() {
+                var query = document.getElementById("queryInput").value;
+                alert("Query Sent: " + query);
             });
         });
     </script>

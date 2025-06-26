@@ -1,21 +1,30 @@
-
+{
+    "xsappname": "my-cap-app",
+    "tenant-mode": "dedicated",
+    "scopes": [
         {
-            "xsappname": "my-cap-app",
-            "tenant-mode": "dedicated",
-            "scopes": [
-                {
-                    "name": "$XSAPPNAME.Viewer",
-                    "description": "Viewer Scope"
-                }
-            ],
-            "role-templates": [
-                {
-                    "name": "Viewer",
-                    "description": "Viewer Role",
-                    "scope-references": [
-                        "$XSAPPNAME.Viewer"
-                    ]
-                }
+            "name": "$XSAPPNAME.Viewer",
+            "description": "Viewer Scope"
+        },
+        {
+            "name": "$XSAPPNAME.Admin",
+            "description": "Admin Scope"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "Viewer",
+            "description": "Viewer Role",
+            "scope-references": [
+                "$XSAPPNAME.Viewer"
+            ]
+        },
+        {
+            "name": "Admin",
+            "description": "Admin Role",
+            "scope-references": [
+                "$XSAPPNAME.Admin"
             ]
         }
-    
+    ]
+}

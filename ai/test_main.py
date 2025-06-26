@@ -1,3 +1,4 @@
+
 from fastapi.testclient import TestClient
 from main import app
 
@@ -22,3 +23,8 @@ def test_stop_sap_ai_core_job():
     response = client.post("/sap-ai-core/stop-job", ={"job_id": "12345"})
     assert response.status_code == 200
     assert response.() == {"status": "Job stopped", "job_id": "12345"}
+
+def test_process_nlp_query():
+    response = client.post("/process-nlp-query", ={"text": "Hello, assistant!"})
+    assert response.status_code == 200
+    assert response.() == {"response": "Processed response for query: Hello, assistant!"}
