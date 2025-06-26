@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import requests
@@ -43,5 +42,3 @@ async def stop_sap_ai_core_job(job_id: str):
     if not job_id:
         raise HTTPException(status_code=400, detail="Job ID is required")
     return {"status": "Job stopped", "job_id": job_id}
-
-# Additional endpoints can be implemented here based on requirements.
